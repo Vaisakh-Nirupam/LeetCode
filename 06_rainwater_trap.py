@@ -1,3 +1,5 @@
+# Given an array of non-negative integers representing bar heights, calculate the total amount of water that can be trapped between the bars after raining.
+
 def rain_trap(lst):
     n = len(lst)
     left = [0]*n
