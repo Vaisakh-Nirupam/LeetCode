@@ -23,9 +23,7 @@ prev = 0
 for i in range(0,len(ytsol)):
     if ytsol[i] != 0:
         # swap
-        hold = ytsol[prev]
-        ytsol[prev] = ytsol[i]
-        ytsol[i] = hold
+        ytsol[prev],ytsol[i] = ytsol[i],ytsol[prev]
         # increment
         prev += 1
 print("Yt After: ",ytsol)
