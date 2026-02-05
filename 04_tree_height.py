@@ -14,7 +14,7 @@ root.left.right = Node(5)
 root.left.left.left = Node(7)
 root.right.right = Node(6)
 
-# Tree Height Code
+# Tree Max Height Code
 def height_finder(a):
     if a == None:
         return 0
@@ -27,4 +27,19 @@ def height_finder(a):
         else:
             return rdepth + 1
 
-print(height_finder(root))
+print("Max Height:",height_finder(root))
+
+# Tree Min Height Code
+def height_finder(a):
+    if a == None:
+        return 0
+    else:
+        ldepth = height_finder(a.left)
+        rdepth = height_finder(a.right)
+
+        if ldepth > rdepth:
+            return rdepth + 1
+        else:
+            return ldepth + 1
+
+print("Min Height:",height_finder(root))
