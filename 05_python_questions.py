@@ -102,4 +102,29 @@ def stack_operate(lst):
 print(stack_operate(["1","2","+","3","*"]))
 
 
+# Create Wave Array from Normal Arrays
+def waves(arr):
+    for i in range(0,len(arr)-1,2):
+        if arr[i] < arr[i+1]:
+            arr[i],arr[i+1] = arr[i+1],arr[i]
+    return arr
+arr = [3,5,12,2,6,10,7,9,8]
+print("Before Wave:",arr)
+print("After Wave:",waves(arr))
+
+
+# Find the Indexes of the Anagrams
+def anagram(lst):
+    dit = {}
+    for i in range(len(lst)):
+        word = "".join(sorted(lst[i]))
+        if word in dit:
+            dit[word].append(i)
+        else:
+            dit[word] = [i]
+    return dit 
+lst = ["cat","god","dog","act","tac"]
+print(anagram(lst))
+
+
 # 
