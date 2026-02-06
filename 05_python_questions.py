@@ -127,4 +127,24 @@ lst = ["cat","god","dog","act","tac"]
 print(anagram(lst))
 
 
-# 
+# Check all the possible Rotations
+def all_rotations(s):
+    if s is None:
+        return []
+    rotations = []
+    for i in range(len(s)):
+        rotations.append(s[i:] + s[:i])
+    return rotations
+print(all_rotations("abcd"))
+
+
+# Check if its a Rotation
+def rotated(a,b):
+    if a and b == None:
+        return False
+    if len(a) != len(b):
+        return False
+    return b in a+a
+A = "abcd"
+B = "dabc"
+print(rotated(A,B))
