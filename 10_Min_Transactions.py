@@ -14,7 +14,7 @@ def minTransfers(balances):
     lst = [i for i in balances if i != 0]
     lst.sort()
     count = 0
-    while len(lst) > 1:
+    while lst:
         s = lst[0] + lst[-1]
         if s < 0:
             lst[0] = s
