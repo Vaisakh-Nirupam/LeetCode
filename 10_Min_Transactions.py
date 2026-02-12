@@ -4,6 +4,8 @@
 def minTransfers(balances):
     l1 = len([i for i in balances if i < 0])-1
     l2 = len([i for i in balances if i > 0])-1
+    if l1 and l2 == -1:
+        return 0
     return l1 + l2 + 1
 print(minTransfers([30,30,-20,-40]))
 
@@ -21,7 +23,7 @@ def minTransfers(balances):
             lst[-1] = s
             lst.pop(0)
         else:
-            lst[0]= 0
+            lst.pop(0)
             lst.pop()
         count += 1
     return count
